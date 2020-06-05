@@ -178,8 +178,8 @@ class Cryptography():
 
     def DES_Encryptor(self, file_path, key_path, password, progress_bar):
         encrypt_salt_location = key_path
-        file_in = open(encrypt_salt_location, "rb") # Read bytes
-        salt_from_file = file_in.read() # This key should be the same
+        file_in = open(encrypt_salt_location, "rb") 
+        salt_from_file = file_in.read() 
         file_in.close()
         encrypt_key = PBKDF2(password, salt_from_file, dkLen=8) 
         file_to_encrypt = file_path
